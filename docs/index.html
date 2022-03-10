@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Payment Widget Version Manager</title>
+        <meta charset="utf-8"  />
+        <meta name="viewport" content="width=device-width">
+        <link rel="shortcut icon" type="image/x-icon" href="https://www.payoneer.com/wp-content/uploads/index.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+        <link rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" 
+            integrity="sha512-IgmDkwzs96t4SrChW29No3NXBIBv8baW490zk5aXvhCD8vuZM3yUSkbyTBcXohkySecyzIrUwiF/qV0cuPcL3Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" type="text/css" href="styles.css"></link>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+
+    <body>
+        <header>
+            <img src="assets/logo.svg">
+            <h2 class="title is-2">Payment Widget Version Manager</h2>
+        </header>
+        <main class="content">
+            <section class="section">
+                <h3 class="title is-4">About this tool</h3>
+                <p>This tool is for merchants using the Payoneer Checkout Payment Widget in their online shop who want to know what versions of the payment widget are available and to download the latest widget versions.</p>
+            </section>
+            <section class="section">
+                <h3 class="title is-4">Current payment widget versions</h3>
+                <p>The table below shows which versions are currently the latest released on our Test (Sandbox) and Live environments. 
+                    Any version currently on Test (Sandbox) but not Live should only be tested against the Test (Sandbox) environment</p>
+                <div class="card">
+                    <table class="table is-bordered">
+                        <thead>
+                            <tr>
+                                <th>Environment</th>
+                                <th>Latest widget version</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Test (Sandbox)</td>
+                                <td>
+                                    <span class="tag is-info is-light" id="sandbox-version">Unavailable</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Live</td>
+                                <td>
+                                    <span class="tag is-warning is-light" id="live-version">Unavailable</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section id="download-widget" class="section">
+                <h3 class="title is-4">Download new payment widget version</h3>
+                <p>First <b>make sure that there is no existing folder called op-payment-widget-v3</b> in your current directory. Then choose the version you want to download and run the commands in your terminal</p>
+                <div class="download-section">
+                    <div class="version-selector">
+                        <h5 class="title is-5">1. Select version</h5>
+                        <div id="select-container" class="card selector-card">
+                            <label class="label" for="version-select">Select a new version</label>
+                            <select class="select" id="version-select"></select>
+                        </div>
+                    </div>
+                    <div id="commands-area" class="commands-area hidden">
+                        <h5 class="title is-5">2. Download version</h5>
+                        <div class="tabs is-right">
+                            <ul>
+                              <li class="is-active"><a>Mac + Linux</a></li>
+                            </ul>
+                        </div>
+                        <pre id="commands" class="card code-area"></pre>
+                        <button class="btn button" data-clipboard-target="#commands">
+                            Copy &nbsp;<span class="icon is-small">
+                                <i class="fas fa-clipboard"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div id="update-shop" class="commands-area hidden">
+                        <h5 class="title is-5">3. Update the payment widget version in your e-shop project</h5>
+                        <p>The files you need for embedded integration can be found in the <b>build</b> folder within the new zip folder. <a href="https://checkoutdocs.payoneer.com/docs/integrate-embedded-payment-page" target="_blank">Read our documentation</a> to see which files you need to include and how to customise the payment widget.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

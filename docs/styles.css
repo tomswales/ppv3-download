@@ -1,0 +1,94 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+header {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-left: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url('assets/background.jpeg');
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.section {
+    padding: 1.5rem;
+}
+
+.section.hidden {
+    display: none;
+}
+
+table {
+    table-layout: fixed;
+}
+
+header h2.title.is-2 {
+    margin: 1rem;
+    color: white;
+    font-size: 1.5rem;
+    min-width: 150px;
+}
+
+header img {
+    height: 2rem;
+    margin: 1rem;
+}
+
+main {
+    width: 100vw;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.download-section {
+    display: flex;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+.version-selector {
+    flex: 1;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.selector-card {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    max-width: 20rem;
+}
+
+.commands-area {
+    flex: 1;
+    max-width: 100%;
+    margin-bottom: 3rem;
+}
+
+.commands-area.hidden {
+    display: none;
+}
+
+.code-area {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    background-color: #33373e;
+    color: #7fff00;
+    overflow: scroll;
+}
