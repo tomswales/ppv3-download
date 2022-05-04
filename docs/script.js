@@ -3,7 +3,6 @@ let versions = [];
 let selectedVersion;
 let clipboard;
 
-window.location.reload();
 
 window.onload = function () {
     environments.forEach(env => fetchVersion(env, versions));
