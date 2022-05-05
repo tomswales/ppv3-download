@@ -12,16 +12,7 @@ window.onload = function () {
 
 function fetchVersion(environment, versions) {
 
-    const myHeaders = new Headers();
-    myHeaders.append('pragma', 'no-cache');
-    myHeaders.append('cache-control', 'no-cache');
-
-    const myInit = {
-        method: 'GET',
-        headers: myHeaders,
-    };
-
-    fetch("https://resources." + environment + ".oscato.com/paymentpage/v3/version", myInit)
+    fetch("https://resources." + environment + ".oscato.com/paymentpage/v3/version")
     .then(res => res.text())
     .then(version => {
         const trimmedVersion = version.trim()
